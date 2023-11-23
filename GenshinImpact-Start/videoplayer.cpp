@@ -6,6 +6,7 @@
 #include <QtWidgets>
 #include <QVideoWidget>
 
+
 VideoPlayer::VideoPlayer(QWidget *parent)
     : QWidget(parent)
 {

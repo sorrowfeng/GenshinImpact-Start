@@ -30,7 +30,7 @@ void DetectScreenThread::run()
 {
     while (!is_exit_)
     {
-        QThread::msleep(100);
+        QThread::msleep(200);
         if (is_stop_) continue;
 
         DetectScreen();
@@ -65,7 +65,7 @@ bool DetectScreenThread::IsWhitePixelPercentage(const QPixmap &pixmap, float per
     for (int x = 0; x < pixmap.width(); ++x) {
         for (int y = 0; y < pixmap.height(); ++y) {
             QColor color = pixmap.toImage().pixelColor(x, y);
-            if (color.red() == 255 && color.green() == 255 && color.blue() == 255) {
+            if (color.red() >= 240 && color.green() >= 240 && color.blue() >= 240) {
                 whiteCount++;
             }
         }

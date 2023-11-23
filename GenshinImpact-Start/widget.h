@@ -28,11 +28,17 @@ protected:
 protected:
     void PlayStart();
     void PlayEnd();
+    QString GetDocumentPathDir() const;
+    void CreateNewSettings(const QString& path);
+    void LoadSettings();
+    void SetAutoRun(bool isStart);
 
 private:
     Ui::Widget *ui;
 
     VideoPlayer *video_player_ = nullptr;
     DetectScreenThread *detect_thread_ = nullptr;
+
+    QString local_video_path_;
 };
 #endif // WIDGET_H
